@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100%;
+}
+:root {
+  --width-of-thebox: 500px;
+  --width-of-cursor: 5px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.container {
+  position: relative;
+  height: 50px;
+  width: var(--width-of-thebox);
+  background-color: grey;
+  display: flex;
+}
+.region {
+  height: 100%;
+}
+.red {
+  background-color: red;
+  width: 16.7%;
+}
+.orange {
+  width: 16.7%;
+  background-color: orange;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+}
+.green {
+  width: 33.3%;
+  background-color: greenyellow;
+}
+.cursor {
+  position: absolute;
+  width: var(--width-of-cursor);
+  height: 100%;
+  left: 0;
+  background-color: indigo;
+
+  animation: moveCursor 2s linear 0s infinite alternate;
+}
+
+.btn-container {
+  width: 100%;
+  text-align: center;
+}
+button {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(147, 12, 243);
+  color: white;
+  border-radius: 10px;
+}
+button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(58, 50, 65);
+}
+@keyframes moveCursor {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(var(--width-of-thebox) - var(--width-of-cursor));
+  }
+}
